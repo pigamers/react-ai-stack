@@ -34,9 +34,9 @@ npm run dev
 -Open your browser and navigate to http://localhost:5173.
 
 ### 5. Usage
-    Upload an Excel file using the Upload button.
-    The data will be parsed, and the Invoices, Products, and Customers will be displayed in their respective sections.
-    Any changes made to the data will be updated in real-time using Redux.
+- Upload an Excel file using the Upload button.
+- The data will be parsed, and the Invoices, Products, and Customers will be displayed in their respective sections.
+- Any changes made to the data will be updated in real-time using Redux.
 
 ### 6. Screenshots
 
