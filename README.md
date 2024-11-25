@@ -1,4 +1,4 @@
-# Swipe Invoice Management Application
+# Invoice Management Application
 
 ## Description
 
@@ -39,4 +39,5 @@ Open your browser and navigate to http://localhost:5173.
     Any changes made to the data will be updated in real-time using Redux.
 
 ### 6. Screenshots
+    ![Alt text](/assets/one.png)
 
