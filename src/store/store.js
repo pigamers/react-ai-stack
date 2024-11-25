@@ -1,13 +1,11 @@
+// store.js
 import { configureStore } from '@reduxjs/toolkit';
-import invoiceReducer from './invoiceSlice';
-import productReducer from './productSlice';
-import customerReducer from './customerSlice';
+import invoiceReducer from '../store/invoiceSlice'; // Adjust the path if needed
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
-    invoices: invoiceReducer,
-    products: productReducer,
-    customers: customerReducer,
+    invoice: invoiceReducer,  // Add invoice reducer to store
   },
 });
 
+export default store;

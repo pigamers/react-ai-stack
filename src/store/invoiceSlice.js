@@ -1,15 +1,13 @@
-// src/store/invoiceSlice.js
+// invoiceSlice.js
 
 import { createSlice } from '@reduxjs/toolkit';
 
-// Initial state
 const initialState = {
   invoices: [],
   products: [],
   customers: [],
 };
 
-// Create a slice
 const invoiceSlice = createSlice({
   name: 'invoice',
   initialState,
@@ -26,8 +24,6 @@ const invoiceSlice = createSlice({
   },
 });
 
-// Export the actions to use in components
 export const { addInvoice, addProduct, addCustomer } = invoiceSlice.actions;
 
-// Export the reducer to be used in store
-export default invoiceSlice.reducer;
+export default invoiceSlice.reducer; // Default export of the reducer

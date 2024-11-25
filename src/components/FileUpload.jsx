@@ -1,82 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { processFile } from '../utils/fileProcessor';
 
 const FileUpload = ({ onDataExtracted }) => {
   const [file, setFile] = useState(null);
+  const dispatch = useDispatch(); // Initialize dispatch function for Redux
 
   const handleFileUpload = (e) => {
     const uploadedFile = e.target.files[0];
     setFile(uploadedFile);
-    // Mock AI data extraction
-    const extractedData = extractData(uploadedFile);
-    onDataExtracted(extractedData);
-  };
 
-  // Mock AI data extraction
-  const extractData = (file) => {
-    // Mock data: Normally, this would be done via AI model/algorithm or API
-    if (file.type === 'application/pdf') {
-      return {
-        invoices: [
-          {
-            serialNumber: 'INV001',
-            customerName: 'John Doe',
-            productName: 'Laptop',
-            qty: 1,
-            tax: 20,
-            total: 1200,
-            date: '2024-11-20',
-          },
-        ],
-        products: [
-          {
-            name: 'Laptop',
-            quantity: 10,
-            unitPrice: 1000,
-            tax: 20,
-            priceWithTax: 1200,
-          },
-        ],
-        customers: [
-          {
-            name: 'John Doe',
-            phone: '123-456-7890',
-            totalPurchase: 1200,
-          },
-        ],
-      };
+    if (uploadedFile) {
+      // Call the processFile function to handle different file types
+      processFile(uploadedFile, dispatch);
     }
-    if (file.type === 'application/vnd.ms-excel') {
-      return {
-        invoices: [
-          {
-            serialNumber: 'INV002',
-            customerName: 'Jane Smith',
-            productName: 'Phone',
-            qty: 2,
-            tax: 10,
-            total: 800,
-            date: '2024-11-22',
-          },
-        ],
-        products: [
-          {
-            name: 'Phone',
-            quantity: 5,
-            unitPrice: 500,
-            tax: 10,
-            priceWithTax: 550,
-          },
-        ],
-        customers: [
-          {
-            name: 'Jane Smith',
-            phone: '098-765-4321',
-            totalPurchase: 800,
-          },
-        ],
-      };
-    }
-    return { invoices: [], products: [], customers: [] }; // Empty result for unsupported file
   };
 
   return (

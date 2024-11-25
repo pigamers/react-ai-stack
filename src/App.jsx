@@ -7,6 +7,7 @@ import FileUpload from './components/FileUpload';
 function App() {
   const [data, setData] = useState({ invoices: [], products: [], customers: [] });
   const [activeTab, setActiveTab] = useState('invoices');
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -14,6 +15,12 @@ function App() {
 
   const handleDataExtracted = (extractedData) => {
     setData(extractedData);
+  };
+
+  const handleFileUpload = async (file) => {
+    setIsProcessing(true);
+    await processFile(file, dispatch); // Assuming this function triggers your data extraction logic
+    setIsProcessing(false);
   };
 
   return (
@@ -26,6 +33,11 @@ function App() {
 
       {/* File Upload */}
       <FileUpload onDataExtracted={handleDataExtracted} />
+
+      {/* Loading State */}
+      {isProcessing && (
+        <div className="text-center py-4">Processing data, please wait...</div>
+      )}
 
       {/* Tab Buttons */}
       <div className="flex justify-center space-x-6 mb-12">
@@ -52,13 +64,12 @@ function App() {
       {/* Data Display Section */}
       <div className="w-full max-w-7xl mx-auto">
         {/* Invoices Tab */}
-        {activeTab === 'invoices' && <InvoicesTab data={data} />}
+        {activeTab === 'invoices' && <InvoicesTab invoices={data.invoices} />}
         {/* Products Tab */}
-        {activeTab === 'products' && <ProductsTab data={data} />}
+        {activeTab === 'products' && <ProductsTab products={data.products} />}
         {/* Customers Tab */}
-        {activeTab === 'customers' && <CustomersTab data={data} />}
+        {activeTab === 'customers' && <CustomersTab customers={data.customers} />}
       </div>
-
     </div>
   );
 }
