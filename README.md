@@ -2,7 +2,7 @@
 
 ## Description
 
-The Swipe Invoice Management Application automates the extraction, processing, and management of invoice data from various file formats. Currently, it supports extracting data from Excel files, organizing it into three main sections: **Invoices**, **Products**, and **Customers**, and synchronizing changes in real-time using Redux for consistent updates across tabs.
+The Invoice Management Application automates the extraction, processing, and management of invoice data from various file formats. Currently, it supports extracting data from Excel files, organizing it into three main sections: **Invoices**, **Products**, and **Customers**, and synchronizing changes in real-time using Redux for consistent updates across tabs.
 
 ## Features
 
@@ -31,7 +31,7 @@ npm run dev
 ```
 
 ### 4. Access the application in your browser:
--Open your browser and navigate to http://localhost:5173.
+- Open your browser and navigate to http://localhost:5173.
 
 ### 5. Usage
 - Upload an Excel file using the Upload button.
