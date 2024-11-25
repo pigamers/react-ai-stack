@@ -47,10 +47,10 @@ npm run dev
 ![Alt text](/src/assets/three.png)
 
 ### 7. Technologies Used
--React
--Redux
--Vite
--XLSX (Excel Parsing)
+- React
+- Redux
+- Vite
+- XLSX (Excel Parsing)
 
 ### 8. Final Step
 - Ensure you have `redux`, `@reduxjs/toolkit`, and `xlsx` installed as dependencies.
