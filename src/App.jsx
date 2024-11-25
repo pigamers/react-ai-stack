@@ -62,7 +62,7 @@ function App() {
       </div>
 
       {/* Data Display Section */}
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full mx-auto">
         {/* Invoices Tab */}
         {activeTab === 'invoices' && <InvoicesTab invoices={data.invoices} />}
         {/* Products Tab */}
