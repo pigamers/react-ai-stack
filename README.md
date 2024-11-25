@@ -31,7 +31,7 @@ npm run dev
 ```
 
 ### 4. Access the application in your browser:
-Open your browser and navigate to http://localhost:5173.
+-Open your browser and navigate to http://localhost:5173.
 
 ### 5. Usage
     Upload an Excel file using the Upload button.
@@ -39,17 +39,18 @@ Open your browser and navigate to http://localhost:5173.
     Any changes made to the data will be updated in real-time using Redux.
 
 ### 6. Screenshots
-    ![Alt text](/assets/one.png)
 
 ![Alt text](/src/assets/one.png)
+
 ![Alt text](/src/assets/two.png)
+
 ![Alt text](/src/assets/three.png)
 
 ### 7. Technologies Used
-    React
-    Redux
-    Vite
-    XLSX (Excel Parsing)
+-React
+-Redux
+-Vite
+-XLSX (Excel Parsing)
 
 ### 8. Final Step
 - Ensure you have `redux`, `@reduxjs/toolkit`, and `xlsx` installed as dependencies.
