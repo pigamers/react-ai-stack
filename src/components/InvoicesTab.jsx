@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 const InvoicesTab = () => {
   const invoices = useSelector((state) => state.invoice.invoices);
+  // console.log(invoices);
 
   return (
     <div className="overflow-x-auto bg-white shadow-lg rounded-lg p-6 mb-8">

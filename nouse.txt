@@ -1,0 +1,54 @@
+export const processPdf = async (file, dispatch) => {
+  console.log("Processing PDF file with pdf.js...");
+
+  const reader = new FileReader();
+
+  reader.onload = async (e) => {
+    console.log("PDF file loaded...");
+
+    const pdfData = e.target.result;
+
+    try {
+      // Ensure we're getting the correct data before passing it to pdf.js
+      console.log("PDF Data:", pdfData);
+
+      // Load the PDF document
+      const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+
+      // Check if pdf loaded correctly
+      if (!pdf || pdf.numPages === undefined) {
+        console.error("Failed to load PDF or get number of pages");
+        return;
+      }
+
+      console.log("PDF loaded successfully...");
+      const numPages = pdf.numPages;
+      console.log(`Total pages in PDF: ${numPages}`);
+      
+      // Extract text from each page (as before)
+      let extractedText = '';
+      for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+        console.log(`Extracting text from page ${pageNum}`);
+
+        const page = await pdf.getPage(pageNum);
+        const textContent = await page.getTextContent();
+        
+        textContent.items.forEach((textItem) => {
+          extractedText += textItem.str + " ";
+        });
+
+        if (pageNum === numPages) {
+          console.log("Extracted Text:", extractedText);
+        }
+      }
+    } catch (error) {
+      console.error("Error loading PDF:", error);
+    }
+  };
+
+  reader.onerror = (error) => {
+    console.error("Error reading file:", error);
+  };
+
+  reader.readAsArrayBuffer(file); // Read the file as an ArrayBuffer
+};
