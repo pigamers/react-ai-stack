@@ -17,5 +17,26 @@ The Swipe Invoice Management Application automates the extraction, processing, a
 ### 1. Clone the repository:
 ```bash
 git clone https://github.com/pigamers/react-ai-stack.git
+```
 
+### 2. Install dependencies:
+```bash
+cd react-ai-stack
+npm install
+```
+
+### 3. Start the development server:
+```bash
+npm run dev
+```
+
+### 4. Access the application in your browser:
+Open your browser and navigate to http://localhost:5173.
+
+### 5. Usage
+    Upload an Excel file using the Upload button.
+    The data will be parsed, and the Invoices, Products, and Customers will be displayed in their respective sections.
+    Any changes made to the data will be updated in real-time using Redux.
+
+### 6. Screenshots
 
