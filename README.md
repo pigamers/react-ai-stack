@@ -40,3 +40,16 @@ Open your browser and navigate to http://localhost:5173.
 
 ### 6. Screenshots
 
+![Alt text](/src/assets/one.png)
+![Alt text](/src/assets/two.png)
+![Alt text](/src/assets/three.png)
+
+### 7. Technologies Used
+    React
+    Redux
+    Vite
+    XLSX (Excel Parsing)
+
+### 8. Final Step
+- Ensure you have `redux`, `@reduxjs/toolkit`, and `xlsx` installed as dependencies.
+
